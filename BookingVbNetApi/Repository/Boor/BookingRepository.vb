@@ -185,7 +185,7 @@ Namespace Repository
             Return rowEffect
         End Function
 
- 
+
         Public Function UpdateBookingById(id As Integer, orderDateValue As String, arrivalDateValue As String, totalRoomvalue As Integer, totalGuestValue As Integer, discountValue As Decimal, totalTaxValue As Decimal, totalAmountValue As Double, DpValue As Integer, payTypeValue As String, isPaidValue As String, orderTypeValue As String, cardnumberValue As Integer, memberTypeValue As String, statusValue As String, userIdValue As Integer, hotelIdValue As Integer, Optional showCommand As Boolean = False) As Boolean Implements IBookingRepository.UpdateBookingById
             Dim updatebooking As New Booking_orders()
 

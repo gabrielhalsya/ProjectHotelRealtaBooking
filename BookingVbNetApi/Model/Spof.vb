@@ -8,14 +8,14 @@
         Private _spof_discount As Double
         Private _spof_start_date As String
         Private _spof_end_date As String
-        Private _spof_min_qty As Integer
-        Private _spof_max_qty As Integer
+        Private _spof_min_qty As Nullable(Of Integer)
+        Private _spof_max_qty As Nullable(Of Integer)
         Private _spof_modified_date As String
 
         Public Sub New()
         End Sub
 
-        Public Sub New(spof_name As String, spof_description As String, spof_type As String, spof_discount As Double, spof_start_date As String, spof_end_date As String, spof_min_qty As Integer, spof_max_qty As Integer, spof_modified_date As String)
+        Public Sub New(spof_name As String, spof_description As String, spof_type As String, spof_discount As Double, spof_start_date As String, spof_end_date As String, spof_min_qty As Integer?, spof_max_qty As Integer?, spof_modified_date As String)
             Me.Spof_name = spof_name
             Me.Spof_description = spof_description
             Me.Spof_type = spof_type
@@ -27,7 +27,7 @@
             Me.Spof_modified_date = spof_modified_date
         End Sub
 
-        Public Sub New(spof_id As Integer, spof_name As String, spof_description As String, spof_type As String, spof_discount As Double, spof_start_date As String, spof_end_date As String, spof_min_qty As Integer, spof_max_qty As Integer, spof_modified_date As String)
+        Public Sub New(spof_id As Integer, spof_name As String, spof_description As String, spof_type As String, spof_discount As Double, spof_start_date As String, spof_end_date As String, spof_min_qty As Integer?, spof_max_qty As Integer?, spof_modified_date As String)
             Me.Spof_id = spof_id
             Me.Spof_name = spof_name
             Me.Spof_description = spof_description
@@ -39,19 +39,6 @@
             Me.Spof_max_qty = spof_max_qty
             Me.Spof_modified_date = spof_modified_date
         End Sub
-
-        Public Overrides Function ToString() As String
-            Return $" _spof_id               : {Spof_id} 
- _spof_name             : {Spof_name} 
- _spof_description      : {Spof_description}
- _spof_type             : {Spof_type}
- _spof_discount         : {Spof_discount} 
- _spof_start_date       : {Spof_start_date} 
- _spof_end_date         : {Spof_end_date}
- _spof_min_qty          : {Spof_min_qty}
- _spof_max_qty          : {Spof_max_qty}
- _spof_modified_date    : {Spof_modified_date}"
-        End Function
 
         Public Property Spof_id As Integer
             Get
@@ -116,20 +103,20 @@
             End Set
         End Property
 
-        Public Property Spof_min_qty As Integer
+        Public Property Spof_min_qty As Integer?
             Get
                 Return _spof_min_qty
             End Get
-            Set(value As Integer)
+            Set(value As Integer?)
                 _spof_min_qty = value
             End Set
         End Property
 
-        Public Property Spof_max_qty As Integer
+        Public Property Spof_max_qty As Integer?
             Get
                 Return _spof_max_qty
             End Get
-            Set(value As Integer)
+            Set(value As Integer?)
                 _spof_max_qty = value
             End Set
         End Property
@@ -142,6 +129,21 @@
                 _spof_modified_date = value
             End Set
         End Property
+
+        Public Overrides Function ToString() As String
+            Return $" _spof_id               : {Spof_id} 
+ _spof_name             : {Spof_name} 
+ _spof_description      : {Spof_description}
+ _spof_type             : {Spof_type}
+ _spof_discount         : {Spof_discount} 
+ _spof_start_date       : {Spof_start_date} 
+ _spof_end_date         : {Spof_end_date}
+ _spof_min_qty          : {Spof_min_qty}
+ _spof_max_qty          : {Spof_max_qty}
+ _spof_modified_date    : {Spof_modified_date}"
+        End Function
+
+
     End Class
 
 End Namespace

@@ -6,6 +6,7 @@ Public Class BookingVbApi
     Private Property _repoManager As IRepositoryManager
     Private ReadOnly _repositoryContext As IRepositoryContext 'buat variabel untuk menyimpan variabel untuk IRepo
 
+
     Public Sub New(ByVal connString As String)
         'Console.WriteLine($"Cek connString apakah ketangkap : {connString}")
         If _repositoryContext Is Nothing Then

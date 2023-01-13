@@ -6,6 +6,9 @@ Namespace Base
 
         Private _bookingRepository As IBookingRepository
         Private _bordeRepository As IBordeRepository
+        Private _socoRepository As ISocoRepository
+        Private _usbrRepository As IUsbrRepository
+
 
         Private ReadOnly _repositoryContext As IRepositoryContext
 
@@ -23,7 +26,7 @@ Namespace Base
             End Get
         End Property
 
-        Public ReadOnly Property Borde As IBookingRepository Implements IRepositoryManager.Borde
+        Public ReadOnly Property Borde As IBordeRepository Implements IRepositoryManager.Borde
             Get
                 If _bordeRepository Is Nothing Then
                     _bordeRepository = New BordeRepository(_repositoryContext)
@@ -32,27 +35,21 @@ Namespace Base
             End Get
         End Property
 
-        Public ReadOnly Property Boex As IBookingRepository Implements IRepositoryManager.Boex
+        Public ReadOnly Property Soco As ISocoRepository Implements IRepositoryManager.Soco
             Get
-                Throw New NotImplementedException()
+                If _socoRepository Is Nothing Then
+                    _socoRepository = New SocoRepository(_repositoryContext)
+                End If
+                Return _socoRepository
             End Get
         End Property
 
-        Public ReadOnly Property Soco As IBookingRepository Implements IRepositoryManager.Soco
+        Public ReadOnly Property Usbr As IUsbrRepository Implements IRepositoryManager.Usbr
             Get
-                Throw New NotImplementedException()
-            End Get
-        End Property
-
-        Public ReadOnly Property Spof As IBookingRepository Implements IRepositoryManager.Spof
-            Get
-                Throw New NotImplementedException()
-            End Get
-        End Property
-
-        Public ReadOnly Property Usbr As IBookingRepository Implements IRepositoryManager.Usbr
-            Get
-                Throw New NotImplementedException()
+                If _usbrRepository Is Nothing Then
+                    _usbrRepository = New UsbrRepository(_repositoryContext)
+                End If
+                Return _usbrRepository
             End Get
         End Property
     End Class

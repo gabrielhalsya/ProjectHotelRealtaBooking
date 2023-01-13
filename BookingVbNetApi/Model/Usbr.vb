@@ -15,9 +15,11 @@
         End Sub
 
         Public Overrides Function ToString() As String
-            Return $"_usbr_borde_id      : {Usbr_borde_id}
-_usbr_modified_date : {Usbr_modified_date}
-_usbr_total_vacant  : {Usbr_total_vacant}"
+            Return $"
+usbr_borde_id      : {Usbr_borde_id}
+usbr_modified_date : {Usbr_modified_date}
+usbr_total_vacant  : {Usbr_total_vacant}
+"
         End Function
 
         Public Property Usbr_borde_id As Integer

@@ -3,18 +3,11 @@ Namespace Base
     Public Interface IRepositoryManager
         ReadOnly Property Booking As IBookingRepository
 
-        ReadOnly Property Borde As IBookingRepository
+        ReadOnly Property Borde As IBordeRepository
 
-        ReadOnly Property Boex As IBookingRepository
+        ReadOnly Property Soco As ISocoRepository
 
-        ReadOnly Property Soco As IBookingRepository
-
-        ReadOnly Property Spof As IBookingRepository
-
-        ReadOnly Property Usbr As IBookingRepository
-
-
-
+        ReadOnly Property Usbr As IUsbrRepository
 
     End Interface
 End Namespace

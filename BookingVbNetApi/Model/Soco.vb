@@ -20,9 +20,11 @@
         End Sub
 
         Public Overrides Function ToString() As String
-            Return $" _soco_id       : {Soco_id} 
- _soco_borde_id : {Soco_borde_id}
- _soco_spof_id  : {Soco_spof_id}"
+            Return $"
+soco_id       : {Soco_id}  
+soco_borde_id : {Soco_borde_id}
+soco_spof_id  : {Soco_spof_id}
+"
         End Function
 
         Public Property Soco_id As Integer
